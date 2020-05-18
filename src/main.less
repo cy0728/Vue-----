@@ -1,0 +1,607 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    overflow: scroll;
+    width: 100%;
+    height: 900px;
+    background-color: #23262c;
+    box-sizing: border-box;
+}
+#outer {
+    transition: all 0.5s;
+    background-color: rgb(35, 38, 44);
+    padding: 10px;
+    // height: 4000px;
+    position: relative;
+    overflow: scroll;
+    z-index: 10;
+    padding-bottom: 200px;
+}
+
+#allTop {
+    /* display: block; */
+    font-size: 40px;
+    color: white;
+    font-weight: 500;
+    transition: all 1.5s;
+    position: fixed;
+    z-index: 50;
+}
+#topbar {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #222622;
+    transition: all 1.5s;
+    z-index: 10;
+}
+#topIcon {
+    margin-top: 20px;
+    float: right;
+    transition: all 1.5s;
+}
+
+/* 50 */
+#topIcon img {
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+    transition: all 0.5s;
+}
+/* 登录 */
+.login {
+    width: 100%;
+    height: 60px;
+    /* height: 720px; */
+    background-color: rgb(43, 46, 52);
+    margin-top: 110px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-between;
+    /* justify-content: space-between; */
+    box-sizing: border-box;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.login-notice {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#login-userPic {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#login-userName {
+    /* width: 520px; */
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+#phone,
+#password {
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 18px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    letter-spacing: 2px;
+    outline: none;
+}
+
+#login-button {
+    background-color: #e86459;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+    letter-spacing: 15px;
+    margin-top: 20px;
+}
+
+/* 功能按钮 */
+.top-button {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    /* margin-top: 40px; */
+}
+
+.top-button div {
+    width: 172px;
+    height: 50px;
+    background-color: rgb(43, 46, 52);
+    margin-top: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 5px;
+}
+
+.t-b-item span {
+    color: white;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.t-b-item img {
+    width: 25px;
+    height: 25px;
+}
+
+#mask {
+    width: 100%;
+    height: 900px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    background-color: rgba(0, 0, 0);
+    opacity: 0;
+    display: none;
+}
+
+#mainplay {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(27, 31, 37);
+    /* filter: blur(10px); */
+    box-shadow: 0 -10px 20px rgba(255, 255, 255, 0.2);
+    border-radius: 40px 40px 0 0;
+    box-sizing: border-box;
+    padding: 25px;
+
+    overflow: hidden;
+    z-index: 30;
+}
+.bottom-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+// #pic {
+//     width: 60px;
+//     height: 60px;
+//     /* background-color: rgba(0, 0, 0, 0.3); */
+//     background-color: #fff;
+//     display: block;
+//     border-radius: 10px;
+//     z-index: 2;
+// }
+.bottom-flex > img {
+    width: 60px;
+    height: 60px;
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    background-color: #fff;
+    display: block;
+    border-radius: 10px;
+    z-index: 2;
+    transition: all 0.5s;
+}
+.newPic {
+    width: 325px !important;
+    height: 325px !important;
+    // /* background-color: rgba(0, 0, 0, 0.3); */
+    background-color: #fff;
+    display: block;
+    border-radius: 10px;
+    z-index: 2;
+}
+#information {
+    width: 150px;
+    color: white;
+    font-size: 22px;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-weight: 200;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60px;
+    overflow: hidden;
+}
+#songName {
+    display: inline-block;
+    width: 150px;
+    height: 30px;
+    overflow: hidden;
+    letter-spacing: 2px;
+}
+
+#playStyle {
+    font-size: 14px;
+    color: #e86459;
+    font-weight: 400;
+    width: 150px;
+    overflow: hidden;
+    letter-spacing: 1px;
+}
+.playState {
+    overflow: hidden;
+    display: flex;
+    width: 100px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+.next {
+    width: 35px;
+    height: 30px;
+    /* background-color: black; */
+    margin-left: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.m-line {
+    width: 25px;
+    height: 7px;
+    background-color: rgb(223, 138, 130);
+    position: absolute;
+    border-radius: 3px;
+}
+#u-l1 {
+    left: 0px;
+    top: 0px;
+}
+
+#u-l2 {
+    width: 25px;
+    left: 10px;
+    top: 10px;
+}
+
+#u-l3 {
+    left: 0px;
+    top: 20px;
+}
+/* 按钮样式 */
+.menu {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    transition-duration: 1s;
+    display: inline-block;
+    margin: 0px;
+    cursor: pointer;
+}
+
+.icon {
+    height: 7px;
+    width: 40px;
+    top: 15px;
+    background-color: #f8ffe9;
+    border-radius: 10px;
+    position: absolute;
+    transition-duration: 0.5s;
+}
+
+.icon:before {
+    left: 0;
+    position: absolute;
+    top: -12px;
+    height: 7px;
+    width: 40px;
+    background-color: #f8ffe9;
+    content: "";
+    border-radius: 10px;
+    transition-duration: 0.5s;
+}
+
+.icon:after {
+    left: 0;
+    position: absolute;
+    top: 12px;
+    height: 7px;
+    width: 40px;
+    background-color: #f8ffe9;
+    content: "";
+    border-radius: 10px;
+    transition-duration: 0.5s;
+}
+
+.burger2.open .icon {
+    transition-duration: 0.1s;
+    transition-delay: 0.5s;
+    background: transparent;
+}
+
+.burger2.open .icon:before {
+    transition: top 0.5s, transform 0.5s 0.5s;
+    top: 0px;
+    transform: rotateZ(-45deg);
+}
+
+.burger2.open .icon:after {
+    transition: top 0.4s, transform 0.5s 0.5s;
+    top: 0px;
+    transform: rotateZ(45deg);
+}
+
+.burger3.open .icon {
+    background: transparent;
+}
+
+.burger3.open .icon:before {
+    transition: transform 0.5s;
+    transform: rotateZ(45deg) translate(15px, 20px);
+}
+
+.burger3.open .icon:after {
+    transition: transform 0.5s;
+    transform: rotateZ(-405deg) translate(15px, -20px);
+}
+
+/* 按钮结束 */
+
+#control {
+    width: 325px;
+    background-color: white;
+    height: 5px;
+    margin: 25px auto;
+    border-radius: 5px;
+    position: relative;
+}
+#fill {
+    width: 0px;
+    background-color: #e86459;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#point {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: -7px;
+}
+
+#start {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+#end {
+    position: absolute;
+    right: 0;
+    top: 15px;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+#maxSongName {
+    font-size: 28px;
+    /* color: #E86459; */
+    color: white;
+    font-weight: 400;
+    width: 100%;
+    height: 42px;
+    text-align: center;
+    margin: 100px auto;
+    margin-top: 60px;
+    margin-bottom: 0;
+    overflow: hidden;
+    letter-spacing: 2px;
+}
+
+#maxSingerName {
+    font-size: 18px;
+    color: #e86459;
+    /* color: white; */
+    font-weight: 400;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    margin: 25px auto;
+    overflow: hidden;
+    letter-spacing: 1px;
+}
+
+.bigState {
+    width: 100%;
+    height: 75px;
+    /* background-color: pink; */
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+@keyframes bg-color {
+    0% {
+        background-color: #fff;
+    }
+
+    10% {
+        background-color: #e86459;
+    }
+
+    20% {
+        background-color: #fff;
+    }
+
+    30% {
+        background-color: #e86459;
+    }
+
+    40% {
+        background-color: #fff;
+    }
+
+    50% {
+        background-color: #e86459;
+    }
+
+    60% {
+        background-color: #fff;
+    }
+
+    70% {
+        background-color: #e86459;
+    }
+
+    80% {
+        background-color: #fff;
+    }
+
+    90% {
+        background-color: #e86459;
+    }
+}
+.pre {
+    width: 40px;
+    height: 30px;
+    /* background-color: black; */
+    // margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+#m-l1 {
+    left: 7px;
+    top: 0px;
+}
+
+#m-l2 {
+    width: 25px;
+    left: 0px;
+    top: 10px;
+}
+
+#m-l3 {
+    left: 7px;
+    top: 20px;
+}
+#u-l11 {
+    left: 0px;
+    top: 0px;
+}
+
+#u-l21 {
+    width: 25px;
+    left: 10px;
+    top: 10px;
+}
+
+#u-l31 {
+    left: 0px;
+    top: 20px;
+}
+/* 播放页底部音量部分 */
+#restAera {
+    width: 100%;
+    height: 90px;
+    /* border: 1px solid white; */
+}
+
+.volumeControl {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.volumeControl img {
+    width: 30px;
+    height: 30px;
+}
+
+.vc-outline {
+    width: 325px;
+    height: 3px;
+    background-color: #fff;
+    margin-right: 30px;
+    position: relative;
+}
+
+.vc-fill {
+    width: 100%;
+    height: 100%;
+    background-color: #92d148;
+}
+
+.vc-point {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    top: -5px;
+    left: 100%;
+}
+
+/* 歌词 */
+.lrcList {
+    display: block;
+    list-style: none;
+    width: 100%;
+    margin-top: 10px;
+    height: 40px;
+    /* background-color: red; */
+    /* font-family: 'Cambria Math'; */
+    overflow: scroll;
+}
+
+.lrcList li {
+    width: 100%;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    height: 40px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 40px;
+    overflow: hidden;
+    /* background-color: green; */
+    /* margin-top: 20px; */
+}

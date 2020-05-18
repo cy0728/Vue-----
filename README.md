@@ -1,4 +1,4 @@
-# music
+# uniqproject
 
 ## Project setup
 ```
